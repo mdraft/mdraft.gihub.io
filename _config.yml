@@ -10,9 +10,9 @@ email: your-email@domain.com
 baseurl: "/" # the subpath of your site, e.g. /blog
 url: "http://ikra.m-draft.com/" # the base hostname & protocol for your site
 social:
-  instagram: https://instagram.com/
-  facebook-official: https://facebook.com/
-  vk: https://vk.com/
+  instagram: https://instagram.com
+  facebook-official: https://facebook.com
+  vk: https://vk.com
   email: /contact/
   
   #flickr:
