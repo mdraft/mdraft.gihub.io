@@ -2,8 +2,11 @@
 #
 
 # Site settings
-  title: <span style=color:#ff0000;>ИКРО</span>МОБИЛЬ72
-  description:  | ОХЛАЖДЕННЫЙ ПРОДУКТ С КАМЧАТКИ ИКРА КРАСНАЯ (ИКРА ГОРБУШИ) ДОСТАВКА ПО ТЮМЕНИ [+ 7 982 933 6500](tel://+79829336500])
+title: <span style=color:#ff0000;>ИКРО</span>МОБИЛЬ72
+description:  |
+  ОХЛАЖДЕННЫЙ ПРОДУКТ С КАМЧАТКИ
+  ИКРА КРАСНАЯ (ИКРА ГОРБУШИ)
+  ДОСТАВКА ПО ТЮМЕНИ [+ 7 982 933 6500](tel://+79829336500])
 owner: сервис доставки красной икры в Тюмени # or company name
 first_published: 2017-# if migrating another site, the year of your first publish
 email: your-email@domain.com
