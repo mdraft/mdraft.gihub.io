@@ -15,9 +15,8 @@ url: "http://ikra.m-draft.com" # the base hostname & protocol for your site
 social:
   instagram: https://instagram.com
   facebook-official: https://facebook.com
-  vk: "https://vk.com
-  email: /contact/
-  
+  vk: https://vk.com
+  #email: /contact/
   #flickr:
   #youtube-square:
   #spotify:
