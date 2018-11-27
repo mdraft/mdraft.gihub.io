@@ -3,17 +3,17 @@
 
 # Site settings
   title: <span style=color:#ff0000;>ИКРО</span>МОБИЛЬ72
-  description: | ОХЛАЖДЕННЫЙ ПРОДУКТ С КАМЧАТКИ ИКРА КРАСНАЯ (ИКРА ГОРБУШИ) ДОСТАВКА ПО ТЮМЕНИ [+ 7 982 933 6500](tel://+79829336500])
+  description:  | ОХЛАЖДЕННЫЙ ПРОДУКТ С КАМЧАТКИ ИКРА КРАСНАЯ (ИКРА ГОРБУШИ) ДОСТАВКА ПО ТЮМЕНИ [+ 7 982 933 6500](tel://+79829336500])
 owner: сервис доставки красной икры в Тюмени # or company name
 first_published: 2017-# if migrating another site, the year of your first publish
 email: your-email@domain.com
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://ikra.m-draft.com" # the base hostname & protocol for your site
 social:
-  instagram: "https://instagram.com"
-  facebook-official: "https://facebook.com"
-  vk: "https://vk.com"
-  email: "/contact/"
+  instagram: https://instagram.com
+  facebook-official: https://facebook.com
+  vk: "https://vk.com
+  email: /contact/
   
   #flickr:
   #youtube-square:
