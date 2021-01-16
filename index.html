@@ -145,21 +145,16 @@ if ('serviceWorker' in navigator) {
       || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
     }
     
-      // Detects if device is on iOS
-      const isIos = () => {
-        const userAgent = window.navigator.userAgent.toLowerCase();
-        alert("ios 1");
-        return /iphone|ipad|ipod/.test( userAgent );
-      }
+      
       // Detects if device is in standalone mode
       const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
 
-      alert(iOS());
+      //alert(iOS());
 
       // Checks if should display install popup notification:
       if (iOS() && !isInStandaloneMode()) {
         // this.setState({ showInstallMessage: true });
-        alert("ios 2");
+        //alert("ios 2");
         showIosInstall();
       }
 
