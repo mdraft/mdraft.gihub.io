@@ -2,11 +2,24 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
+<meta
+      name="viewport"
+      content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+<meta name="format-detection" content="telephone=no" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
+<meta name="msapplication-TileColor" content="#E6E6FA">
+<meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">
+<meta name="theme-color" content="#E6E6FA">
 
-<meta name="viewport" content="width=device-width initial-scale=1">
 
 <!-- place this in a head section -->
+
+
+<link rel="manifest" href="manifest.json">
 
 <link rel="apple-touch-icon" sizes="57x57" href="icons/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="icons/apple-icon-60x60.png">
@@ -22,16 +35,10 @@
 <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96x96.png">
 <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
 
 
-<link rel="manifest" href="/manifest.json">
 
-<meta name="msapplication-TileColor" content="#E6E6FA">
-<meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">
-<meta name="theme-color" content="#E6E6FA">
 
-<meta name="apple-mobile-web-app-capable" content="yes" />
 <link href="icons/splash-ios.png" sizes="2048x2732" rel="apple-touch-startup-image" />
 <link href="icons/splash-ios.png" sizes="1668x2224" rel="apple-touch-startup-image" />
 <link href="icons/splash-ios.png" sizes="1536x2048" rel="apple-touch-startup-image" />
@@ -54,28 +61,80 @@ if ('serviceWorker' in navigator) {
 }
 
 
-// Detects if device is on iOS 
-const isIos = () => {
-  const userAgent = window.navigator.userAgent.toLowerCase();
-  return /iphone|ipad|ipod/.test( userAgent );
-}
-// Detects if device is in standalone mode
-const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
- 
-// Checks if should display install popup notification:
-if (isIos() && !isInStandaloneMode()) {
-  this.setState({ showInstallMessage: true });
-} 
+      function addToHomeScreen() {
+        let a2hsBtn = document.querySelector(".ad2hs-prompt");  // hide our user interface that shows our A2HS button
+        a2hsBtn.style.display = 'none';  // Show the prompt
+        deferredPrompt.prompt();  // Wait for the user to respond to the prompt
+        deferredPrompt.userChoice
+          .then(function(choiceResult){
 
+        if (choiceResult.outcome === 'accepted') {
+          console.log('User accepted the A2HS prompt');
+        } else {
+          console.log('User dismissed the A2HS prompt');
+        }
 
+        deferredPrompt = null;
+
+      });}
+
+      function showAddToHomeScreen() {
+
+        let a2hsBtn = document.querySelector(".ad2hs-prompt");
+        a2hsBtn.style.display = "block";
+        a2hsBtn.addEventListener("click", addToHomeScreen);
+
+      }
+
+      let deferredPrompt;
+      window.addEventListener('beforeinstallprompt', function (e) {
+        // Prevent Chrome 67 and earlier from automatically showing the prompt
+        e.preventDefault();
+        // Stash the event so it can be triggered later.
+        deferredPrompt = e;
+
+        showAddToHomeScreen();
+      });
+    
+      function showIosInstall() {
+        let iosPrompt = document.querySelector(".ios-prompt");
+        iosPrompt.style.display = "block";
+        iosPrompt.addEventListener("click", () => {
+          iosPrompt.style.display = "none";
+        });
+      }
+    
+      // Detects if device is on iOS
+      const isIos = () => {
+        const userAgent = window.navigator.userAgent.toLowerCase();
+        return /iphone|ipad|ipod/.test( userAgent );
+      }
+      // Detects if device is in standalone mode
+      const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
+
+      // Checks if should display install popup notification:
+      if (isIos() && !isInStandaloneMode()) {
+        // this.setState({ showInstallMessage: true });
+        showIosInstall();
+      }
 
 </script>
 
-  <title>МОЯ ВИЗИТКА vcard.m-draft.com</title>
+  <title>моя визитка от vcard.m-draft.com</title>
   <link rel="stylesheet" href="style/style.css?date=202101162">
  
 </head>
 <body>
+    <app-root></app-root>
+
+    <button type="button" class="ad2hs-prompt">установить визитку</button>
+    <div class="ios-prompt">
+      <span style="color: rgb(187, 187, 187); float: right; margin-top: -14px; margin-right: -11px;">&times;</span>
+      <img src="assets/imgs/add2home.svg" style="float: left; height: 80px; width: auto; margin-top: -8px; margin-right: 1rem;">
+      <p style="margin-top: -3px; line-height: 1.3rem;">To install this Web App in your iPhone/iPad press <img src="assets/imgs/share.svg" style="display: inline-block; margin-top: 4px; margin-bottom: -4px; height: 20px; width: auto;"> and then Add to Home Screen.</p>
+    </div>
+
+
   <div class="container">
     <div class="box">
       <a href=https://milango.pro/vcard/ target=_blank> <img class="welcome" src="images/vcard-0001.jpg"></a>
