@@ -1,7 +1,7 @@
 {
-  "name": "VCARD m-draft.com",
-    "short_name": "Моя Визитка",
-    "description": "Сервис виртуальнных визиток",
+  "name": "vcard от m-draft.com",
+    "short_name": "моя визитка",
+    "description": "сервис виртуальнных визиток",
     "lang": "ru-RU",
     "start_url": "/",
     "display": "standalone",
@@ -9,11 +9,6 @@
     "background_color": "#222",
 
  "icons": [
-   {
-     "src":"\/icons/wcls-logo-512.png",
-     "sizes": "512x512",
-     "type": "image\/png"
-   },
   {
    "src": "\/icons/android-icon-36x36.png",
    "sizes": "36x36",
