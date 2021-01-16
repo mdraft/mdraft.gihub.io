@@ -157,7 +157,7 @@ if ('serviceWorker' in navigator) {
       alert(iOS());
 
       // Checks if should display install popup notification:
-      if (isIos() && !isInStandaloneMode()) {
+      if (iOS() && !isInStandaloneMode()) {
         // this.setState({ showInstallMessage: true });
         alert("ios 2");
         showIosInstall();
